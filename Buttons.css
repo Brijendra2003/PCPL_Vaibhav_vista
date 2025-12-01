@@ -1,0 +1,334 @@
+/* ----------------Other buttons--------------------- */
+
+.button {
+  --width: 200px;
+  --height: 50px;
+  --tooltip-height: 35px;
+  --tooltip-width: 90px;
+  --gap-between-tooltip-to-button: 18px;
+  --button-color: #274c77;
+  --tooltip-color: #fff;
+  width: var(--width);
+  height: var(--height);
+  background: var(--button-color);
+  position: relative;
+  text-align: center;
+  border-radius: 0.45em;
+  font-family: "Arial";
+  transition: background 0.3s;
+}
+
+.button::before {
+  position: absolute;
+  content: attr(data-tooltip);
+  width: var(--tooltip-width);
+  height: var(--tooltip-height);
+  background-color: var(--tooltip-color);
+  font-size: 0.9rem;
+  color: #111;
+  border-radius: 0.25em;
+  line-height: var(--tooltip-height);
+  bottom: calc(var(--height) + var(--gap-between-tooltip-to-button) + 10px);
+  left: calc(50% - var(--tooltip-width) / 2);
+}
+
+.button::after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 0;
+  border: 10px solid transparent;
+  border-top-color: var(--tooltip-color);
+  left: calc(50% - 10px);
+  bottom: calc(100% + var(--gap-between-tooltip-to-button) - 10px);
+}
+
+.button::after,
+.button::before {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s;
+}
+
+.text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-wrapper,
+.text,
+.icon {
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  color: #fff;
+}
+
+.text {
+  top: 0;
+}
+
+.text,
+.icon {
+  transition: top 0.5s;
+}
+
+.icon {
+  color: #fff;
+  top: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.button:hover {
+  background: #4b4849;
+}
+
+.button:hover .text {
+  top: -100%;
+}
+
+.button:hover .icon {
+  top: 0;
+}
+
+.button:hover:before,
+.button:hover:after {
+  opacity: 1;
+  /* visibility: visible; */
+}
+
+.button:hover:after {
+  bottom: calc(var(--height) + var(--gap-between-tooltip-to-button) - 20px);
+}
+
+.button:hover:before {
+  bottom: calc(var(--height) + var(--gap-between-tooltip-to-button));
+}
+
+.btn-17,
+.btn-17 *,
+.btn-17 :after,
+.btn-17 :before,
+.btn-17:after,
+.btn-17:before {
+  border: 0 solid;
+  box-sizing: border-box;
+}
+
+.btn-17 {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: button;
+  background-color: #274c77;
+  background-image: none;
+  color: white;
+  cursor: pointer;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
+    Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  font-size: 100%;
+  font-weight: 900;
+  line-height: 1.5;
+  margin: 0;
+  -webkit-mask-image: -webkit-radial-gradient(#000, #fff);
+  padding: 0;
+  text-transform: uppercase;
+}
+
+.btn-17:disabled {
+  cursor: default;
+}
+
+.btn-17:-moz-focusring {
+  outline: auto;
+}
+
+.btn-17 svg {
+  display: block;
+  vertical-align: middle;
+}
+
+.btn-17 [hidden] {
+  display: none;
+}
+
+.btn-17 {
+  border-radius: 99rem;
+  border-width: 0px;
+  padding: 0.8rem 3rem;
+  z-index: 0;
+}
+
+.btn-17,
+.btn-17 .text-container {
+  overflow: hidden;
+  position: relative;
+  color: #ffffff;
+}
+
+.btn-17 .text-container {
+  display: block;
+  mix-blend-mode: difference;
+}
+
+.btn-17 .text {
+  display: block;
+  position: relative;
+}
+
+.btn-17:hover .text {
+  -webkit-animation: move-up-alternate 0.3s forwards;
+  animation: move-up-alternate 0.3s forwards;
+}
+
+@-webkit-keyframes move-up-alternate {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(80%);
+  }
+
+  51% {
+    transform: translateY(-80%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes move-up-alternate {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(80%);
+  }
+
+  51% {
+    transform: translateY(-80%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+.btn-17:after,
+.btn-17:before {
+  --skew: 0.2;
+  background: #fff;
+  content: "";
+  display: block;
+  height: 102%;
+  left: calc(-50% - 50% * var(--skew));
+  pointer-events: none;
+  position: absolute;
+  top: -104%;
+  transform: skew(calc(150deg * var(--skew))) translateY(var(--progress, 0));
+  transition: transform 0.2s ease;
+  width: 100%;
+}
+
+.btn-17:after {
+  --progress: 0%;
+  left: calc(50% + 50% * var(--skew));
+  top: 102%;
+  z-index: -1;
+}
+
+.btn-17:hover:before {
+  --progress: 100%;
+}
+
+.btn-17:hover:after {
+  --progress: -102%;
+}
+
+.my-button1 {
+  display: inline-block;
+  transition: all 0.2s ease-in;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  color: #090909;
+  padding: 0.6em 1.7em;
+  cursor: pointer;
+  margin: 10px 0px;
+  font-size: 18px;
+  border-radius: 0.5em;
+  /* background: #e8e8e8; */
+  background: #274c77;
+  /* border: 1px solid #e8e8e8; */
+  border: 1px solid #274c77;
+  box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
+  color: white;
+  /* box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #274c77; */
+}
+
+.my-button1:active {
+  color: #666;
+  box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #ffffff;
+}
+
+.my-button1:before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) scaleY(1) scaleX(1.25);
+  top: 100%;
+  width: 140%;
+  height: 180%;
+  background-color: #e8e8e8;
+  border-radius: 50%;
+  display: block;
+  transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+  z-index: -1;
+}
+
+.my-button1:after {
+  content: "";
+  position: absolute;
+  left: 55%;
+  transform: translateX(-50%) scaleY(1) scaleX(1.45);
+  top: 180%;
+  width: 160%;
+  height: 190%;
+  background-color: #e8e8e8;
+  border-radius: 50%;
+  display: block;
+  transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+  z-index: -1;
+}
+
+.my-button1:hover {
+  color: #274c77;
+  border: 1px solid #e8e8e8;
+}
+
+.my-button1:hover:before {
+  top: -35%;
+  background-color: #e8e8e8;
+  transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+}
+
+.my-button1:hover:after {
+  top: -45%;
+  background-color: #e8e8e8;
+  transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+}
+
+
+

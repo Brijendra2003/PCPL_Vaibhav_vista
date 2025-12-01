@@ -1,0 +1,423 @@
+/* ------------------Header Divider---------------------- */
+
+@font-face {
+  font-family: "Round Key";
+  src: url("Fonts/RoundkeySoft-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Sunset heaven";
+  src: url("Fonts/Sunset-Heaven-Personal-Use-Only.ttf");
+}
+
+@font-face {
+  font-family: "Nextir";
+  src: url("Fonts/Nextir-Personal-Use-Only.ttf");
+}
+
+.Cinzel-Decorative {
+  font-family: "Cinzel Decorative", serif;
+}
+
+.Cinzel {
+  font-family: "cinzel", serif;
+}
+
+.hero-sub-container {
+  position: absolute;
+  top: 30%;
+  right: 10vw;
+}
+
+.bg-white-glass {
+  /* From https://css.glass */
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(7.6px);
+  -webkit-backdrop-filter: blur(7.6px);
+}
+
+.bg-white-glass2 {
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.54);
+  border-radius: 10px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6.8px);
+  -webkit-backdrop-filter: blur(6.8px);
+}
+
+nav ul {
+  list-style: none;
+  margin: 0px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  font-family: "Arial";
+  font-size: 15px;
+  font-weight: 600;
+  color: grey;
+
+  /* Smooth transition */
+  transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+  font-size: 17px;
+  color: #274c77;
+  /* text-shadow: 0px 0px 3px #274c77; */
+}
+
+.nav-links.active {
+  color: #274c77;
+  font-weight: 700;
+  border-bottom: 2px solid #274c77;
+  transition: all 0.3s ease;
+}
+
+.container-fluid {
+  scroll-margin-top: 60px;
+}
+
+.my-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.divider {
+  text-align: center;
+  width: 100%;
+  /* border: solid 1px; */
+  margin: 10px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px !important;
+  margin-top: 0px !important;
+}
+
+.divider span {
+  display: block;
+}
+
+/* LEFT LINE */
+.divider span:first-child {
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(to right, transparent, #274c77);
+}
+
+/* TEXT */
+.divider span:nth-child(2) {
+  padding: 0 0px;
+  font-family: "Cinzel Decorative", serif;
+  font-size: 45px;
+  font-weight: 600;
+  color: #4b4849;
+  color: #274c77;
+  white-space: nowrap;
+}
+
+/* RIGHT LINE */
+.divider span:last-child {
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(to right, #274c77, transparent);
+}
+
+.font-round-key {
+  font-family: "Round Key";
+  color: #274c77;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+.box-shadow {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.bg-worm-white {
+  background-color: rgb(236, 236, 234);
+}
+
+.bg-blue {
+  background: linear-gradient(
+    180deg,
+    rgba(39, 135, 149, 0.08),
+    rgba(255, 255, 255, 0)
+  );
+}
+
+.heading-sticky {
+  position: sticky;
+  top: 18%;
+}
+
+.card-sticky {
+  position: sticky;
+  top: 30%;
+  border: none;
+  /* margin-bottom: 200px; */
+}
+
+#amenities {
+  padding-bottom: 800px;
+}
+
+.boxShadow {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.boxShadow:hover {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+    rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+.gap-6 {
+  gap: 50px;
+}
+
+.custom-card-text {
+  text-align: center;
+  font-weight: 500;
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid black;
+  /* font-family: "Sunset heaven"; */
+  font-size: 20px;
+  color: #274c77;
+  line-height: 25px;
+}
+
+.custom-card-text2 {
+  text-align: center;
+  font-weight: 600;
+  color: #ffffff;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Cinzel Decorative", serif;
+  font-size: 30px;
+}
+.w-48 {
+  width: 48%;
+}
+
+.center-element {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bg-overlay {
+  background-image: url("Assets/interior1.webp");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+  min-height: 90vh;
+  /* padding: 50px 0px; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.bg-overlay::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5); /* change opacity */
+  pointer-events: none;
+  z-index: 0;
+}
+
+.font-CD {
+  font-family: "Cinzel Decorative", serif;
+}
+
+.text-heading {
+  font-size: 45px;
+  font-weight: 600;
+  width: 100%;
+  text-align: center;
+  margin: 0px !important;
+}
+
+.container-xl {
+  z-index: 1;
+}
+
+.accordion-button {
+  /* font-family: "Sunset heaven"; */
+  font-size: 20px;
+  /* font-weight: 600; */
+  letter-spacing: 1.5px;
+}
+
+.floor-plan-child {
+  position: relative;
+}
+
+.floor-plan-child::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.9); /* change opacity */
+  pointer-events: none;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+}
+
+.floor-plan-child img {
+  position: relative;
+  z-index: 0;
+}
+
+.floor-plan:hover .floor-plan-child img {
+  z-index: 2;
+}
+
+.floor-plan:hover .cnf-pop-text {
+  visibility: hidden;
+}
+
+.floor-plan :nth-child(1) {
+  border-radius: 10px 0px 0px 10px;
+  overflow: hidden;
+}
+
+.floor-plan :nth-child(2) {
+  border-radius: 0px 10px 10px 0px;
+  overflow: hidden;
+}
+
+.cnf-pop-text {
+  position: absolute;
+  color: white;
+  font-size: 40px;
+  font-weight: 600;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-family: "Sunset heaven";
+}
+
+.font-s-h {
+  font-family: "Sunset heaven";
+  letter-spacing: 2px;
+}
+
+.font-nextir {
+  font-family: "Nextir";
+}
+
+.carousel-control-next {
+  position: absolute;
+  bottom: -115%;
+  right: 320px;
+  opacity: 1;
+}
+
+.carousel-control-prev {
+  position: absolute;
+  bottom: -115%;
+  left: 320px;
+  opacity: 1;
+}
+
+/* Remove Bootstrap's default label styles */
+.floating-label {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #8d8d8d;
+  transition: 0.3s ease;
+  pointer-events: none;
+  background: #fff;
+  padding: 0 4px;
+}
+
+/* Target bootstrap .form-control */
+.input-field .form-control {
+  padding: 10px 15px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #8d8d8d;
+}
+
+.input-field .form-control:focus,
+.input-field .form-control:not(:placeholder-shown) {
+  border-color: #0034de;
+  box-shadow: none;
+}
+
+/* Floating animation */
+.input-field input:focus ~ .floating-label,
+.input-field input:not(:placeholder-shown) ~ .floating-label {
+  top: -4px;
+  left: 10px;
+  font-size: 0.8rem;
+  color: #0034de;
+  font-weight: 600;
+}
+
+/* Your button styling */
+.custom-btn {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 10px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  border: 1px solid #1034aa;
+  border-bottom: 1px solid #90c2ff;
+  background: linear-gradient(135deg, #0034de, #006eff);
+  color: #fff;
+  font-weight: bolder;
+  box-shadow: 0px 2px 3px #000d3848, inset 0px 4px 5px #0070f0,
+    inset 0px -4px 5px #002cbb;
+  transition: 0.2s ease;
+}
+
+.custom-btn:active {
+  box-shadow: inset 0px 4px 5px #0070f0, inset 0px -4px 5px #002cbb;
+  transform: scale(0.98);
+}
+
+.last-container {
+  /* min-height: 800px; */
+  position: relative;
+}
+
+.last-container::before {
+  clip-path: polygon(0 0, 100% 0, 100% 40%, 0 40%);
+  width: 100%;
+  height: 100%;
+  background-color: #274c77;
+  position: absolute;
+  inset: 0;
+  content: "";
+  z-index: 1;
+}
+
+.accordion-button {
+  /* font-family: "Round Key"; */
+  /* font-weight: 600; */
+}
+
+.my-hex-card {
+  clip-path: polygon(75% 0, 100% 50%, 75% 100%, 25% 100%, 0% 50%, 25% 0);
+  background-color: #274c77;
+  width: 300px;
+  height: 250px;
+  color: white;
+}
