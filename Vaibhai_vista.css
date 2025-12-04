@@ -1,8 +1,22 @@
-/* ------------------Header Divider---------------------- */
+#lottie-cursor {
+  transition: transform 0.2s ease;
+  margin: 0%;
+  /* border: solid 1px; */
+}
+.custom-cursor {
+  position: fixed;
+  /*border: solid 1px; */
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 10000;
+  width: 40px;
+  height: 40px;
+}
 
 @font-face {
-  font-family: "Round Key";
-  src: url("Fonts/RoundkeySoft-Regular.ttf");
+  font-family: "font1";
+  src: url("Fonts/Convergence-Regular.ttf");
 }
 
 @font-face {
@@ -15,6 +29,39 @@
   src: url("Fonts/Nextir-Personal-Use-Only.ttf");
 }
 
+/* Floating Animation */
+@keyframes floating-right {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(20px, -20px); /* moves diagonally */
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes floating-left {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-20px, 20px); /* moves diagonally */
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+.floating-effect {
+  animation: floating-right 3s ease-in-out infinite;
+}
+
+.floating-effect-left {
+  animation: floating-left 3s ease-in-out infinite;
+}
+
 .Cinzel-Decorative {
   font-family: "Cinzel Decorative", serif;
 }
@@ -23,10 +70,15 @@
   font-family: "cinzel", serif;
 }
 
+#home {
+  position: relative;
+}
+
 .hero-sub-container {
   position: absolute;
-  top: 30%;
-  right: 10vw;
+  top: 35vh;
+  right: 40vh;
+  padding: 3%;
 }
 
 .bg-white-glass {
@@ -86,11 +138,12 @@ nav ul li a:hover {
   justify-content: space-around;
 }
 
+/* ------------------Header Divider---------------------- */
 .divider {
   text-align: center;
   width: 100%;
   /* border: solid 1px; */
-  margin: 10px 10px;
+  margin: 10px 10px 10px 10px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -112,7 +165,8 @@ nav ul li a:hover {
 /* TEXT */
 .divider span:nth-child(2) {
   padding: 0 0px;
-  font-family: "Cinzel Decorative", serif;
+  font-family: "font1", serif;
+  text-transform: uppercase;
   font-size: 45px;
   font-weight: 600;
   color: #4b4849;
@@ -240,8 +294,8 @@ nav ul li a:hover {
   z-index: 0;
 }
 
-.font-CD {
-  font-family: "Cinzel Decorative", serif;
+.font1 {
+  font-family: "font1";
 }
 
 .text-heading {
@@ -263,6 +317,10 @@ nav ul li a:hover {
   letter-spacing: 1.5px;
 }
 
+.floor-plan {
+  position: relative;
+}
+
 .floor-plan-child {
   position: relative;
 }
@@ -276,6 +334,14 @@ nav ul li a:hover {
   z-index: 1;
   width: 100%;
   height: 100%;
+}
+
+.floor-plan-child:hover img {
+  z-index: 2;
+}
+
+.floor-plan-child:hover .cnf-pop-text {
+  visibility: hidden;
 }
 
 .floor-plan-child img {
@@ -305,10 +371,13 @@ nav ul li a:hover {
   position: absolute;
   color: white;
   font-size: 40px;
-  font-weight: 600;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
-  font-family: "Sunset heaven";
+  font-weight: 500;
+  font-family: "Poppin";
+  /* font-family: "Sunset heaven"; */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
 }
 
 .font-s-h {
@@ -420,4 +489,51 @@ nav ul li a:hover {
   width: 300px;
   height: 250px;
   color: white;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  top: auto !important; /* remove vertical center */
+  bottom: 50px !important; /* adjust distance from bottom */
+  transform: translateX(-50%);
+  color: #274c77;
+  /* center alignment trick */
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  display: none;
+  font-size: 30px;
+}
+
+/* Move both arrows to center */
+.swiper-button-prev {
+  left: 50% !important;
+  margin-left: -30px; /* spacing between buttons */
+}
+
+.swiper-button-next {
+  left: 50% !important;
+  margin-left: 30px;
+}
+
+.swiper-pagination {
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #274c77 !important;
+}
+
+.swiper-wrapper {
+  padding-bottom: 125px;
+}
+
+.my-icon-contact-us {
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  color: #274c77;
+  font-size: 30px;
+  margin-right: 5px;
+  min-height: 100px;
 }
